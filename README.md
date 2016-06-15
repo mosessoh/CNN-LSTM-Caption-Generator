@@ -4,11 +4,11 @@ This code contains a Tensorflow implementation of the CNN-LSTM architecture used
 
 ### Demo instructions
 
-To try a demo of our best trained model, first ensure that Caffe is installed on your computer and that you have downloaded the GoogleNet model using these [instructions](http://www.marekrei.com/blog/transforming-images-to-feature-vectors/). Then, run:
+To try a demo of our best trained model, first ensure that Caffe is installed on your computer and that you have downloaded the GoogleNet model using these [instructions](http://www.marekrei.com/blog/transforming-images-to-feature-vectors/). You'll also need Tensorflow 0.8 installed. Then, run:
 
     ./download.sh
 
-which will retrive all pickled data files (graciously shared by This is an [Satoshi](http://t-satoshi.blogspot.com/2015/12/image-caption-generation-by-cnn-and-lstm.html) in his chainer implementation.) and the Tensorflow saved model created in this project needed to run the demo. This requires around 180MB of disk space. The 'caption_image.py' file contains all the code needed to load and use the saved model. To run the demo, do:
+which will retrive all pickled data files (graciously shared by [Satoshi](http://t-satoshi.blogspot.com/2015/12/image-caption-generation-by-cnn-and-lstm.html) in his chainer implementation.) and the Tensorflow saved model created in this project needed to run the demo. This requires around 180MB of disk space. The 'caption_image.py' file contains all the code needed to load and use the saved model. To run the demo, do:
 
     python caption_image.py -i <path_to_image>
 

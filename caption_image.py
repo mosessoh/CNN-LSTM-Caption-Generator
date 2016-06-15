@@ -22,7 +22,11 @@ def main(argv):
 
     config = Config()
     with tf.variable_scope('CNNLSTM') as scope:
+        print '-'*20
+        print 'Model info'
+        print '-'*20
         model = Model(config)
+        print '-'*20
     saver = tf.train.Saver()
     
     img_vector = forward_cnn(img_path)
@@ -30,8 +34,10 @@ def main(argv):
     with tf.Session() as session:
         save_path = best_model_dir + '/model-37'
         saver.restore(session, save_path)
+        print '2 Layer LSTM loaded'
+        print 'Generating caption...'
         caption = model.generate_caption(session, img_vector)
-        print caption
+        print 'Output:', caption
 
 if __name__ == '__main__':
     main(sys.argv[1:])

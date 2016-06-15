@@ -14,6 +14,8 @@ imagenet_labels = caffe_root + 'data/ilsvrc12/synset_words.txt'
 mean_path = caffe_root + 'python/caffe/imagenet/ilsvrc_2012_mean.npy'
 # Name of the layer we want to extract
 layer_name = 'pool5/7x7_s1'
+
+os.environ['GLOG_minloglevel'] = '3'
  
 sys.path.insert(0, caffe_root + 'python')
 import caffe
@@ -33,6 +35,7 @@ def forward_cnn(image_path):
     input_image = caffe.io.load_image(image_path)
     prediction = net.predict([input_image], oversample=False)
     image_vector = net.blobs[layer_name].data[0].reshape(1,-1)
+    print 'CNN forward pass completed'
     return image_vector
 
  
