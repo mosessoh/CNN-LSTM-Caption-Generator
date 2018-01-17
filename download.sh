@@ -1,7 +1,7 @@
 #! /bin/bash
 cd data_files
 if [ ! -f index2token.pkl ]; then
-    wget https://googledrive.com/host/0B8-CPllE3RJqaHlRTWxxSTI3cW8/index2token.pkl
+    wget https://s3.amazonaws.com/cnn-lstm-caption-generator/index2token.pkl
 fi
 if [ ! -f preprocessed_train_captions.pkl ]; then
     wget https://s3.amazonaws.com/cnn-lstm-caption-generator/preprocessed_train_captions.pkl
